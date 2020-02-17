@@ -9,13 +9,13 @@ Vagrant.configure(2) do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
-  if ENV['FIRST_RUN'] == 'true'
-    config.vbguest.auto_update = false
-    config.vm.synced_folder ".", "/vagrant", disabled: true
-  else
-    config.vm.synced_folder ".", "/vagrant", create: true, type: "virtualbox"
-    config.vm.synced_folder "./www", "/var/www", create: true, type: "virtualbox", owner: "www-data", group: "www-data"
-  end  # Every Vagrant development environment requires a box. You can search for
+  #if ENV['FIRST_RUN'] == 'true'
+  #   config.vbguest.auto_update = false
+  #   config.vm.synced_folder ".", "/vagrant", disabled: true
+  # else
+  #   config.vm.synced_folder ".", "/vagrant", create: true, type: "virtualbox"
+  #   config.vm.synced_folder "./www", "/var/www", create: true, type: "virtualbox", owner: "www-data", group: "www-data"
+  # end  # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "debian/jessie64"
 
@@ -42,7 +42,7 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "./", "/srv/minikernel"
+  # config.vm.synced_folder "./", "/srv/minikernel"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
